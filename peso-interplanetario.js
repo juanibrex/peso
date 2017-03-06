@@ -18,6 +18,7 @@ var pesoUsuario,
 var gTierra = 9.8;
 
 function pesaje(){
+  var estado = 0;
   var inputUsuario = document.getElementById("js-usuario");
   pesoUsuario = parseInt(inputUsuario.value);
 
