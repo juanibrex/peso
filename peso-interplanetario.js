@@ -25,7 +25,7 @@ function pesaje(){
     if(pesoUsuario > 0){
       pesoFinal = pesoUsuario * w.gravedad / gTierra;
       console.log(pesoFinal + "kg en " + w.nombre);
-      resultado.innerHTML += pesoFinal + "kg en " + w.nombre + "<br />";
+      resultado.innerHTML += "<p>" + pesoFinal + "kg en " + w.nombre + "</p>";
     }
   }
 }
