@@ -13,16 +13,19 @@ var sistemaSolar = [];
 sistemaSolar.push(new Planeta("Tierra", 9.8));
 sistemaSolar.push(new Planeta("Marte", 3.7));
 
-var pesoUsuario = 80;
+var pesoUsuario,
+    pesoFinal;
 var gTierra = 9.8;
-var peso;
 
 function pesaje(){
+  var inputUsuario = document.getElementById("js-usuario");
+  pesoUsuario = parseInt(inputUsuario.value);
+
   for(var w of sistemaSolar){
     if(pesoUsuario > 0){
-      peso = pesoUsuario * w.gravedad / gTierra;
-      console.log(peso + "kg en " + w.nombre);
-      resultado.innerHTML += peso + "kg en " + w.nombre + "<br />";
+      pesoFinal = pesoUsuario * w.gravedad / gTierra;
+      console.log(pesoFinal + "kg en " + w.nombre);
+      resultado.innerHTML += pesoFinal + "kg en " + w.nombre + "<br />";
     }
   }
 }
