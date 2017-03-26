@@ -1,0 +1,17 @@
+body {
+  background-color: gold;
+}
+
+body div {
+  background-color: #f00;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .item {
+  background-color: #0ff;
+}
