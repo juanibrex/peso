@@ -1,18 +1,55 @@
-$primary-color: #0ff;
+/*
+* Variables
+*/
+
+// Colors
+$primary-color: #fff;
+$secondary-color: #0ff;
+$bg-color: #000;
+
+// Gutter
+$maxW: 400px;
+$gap: .5em;
+
+// Basic Reset
+*{margin: 0;padding: 0;box-sizing: border-box;}
 
 body{
-  background-color: gold;
+  background-color: $bg-color;
+  color: $primary-color;
+  max-width: $maxW;
   // margin: 0 auto;
+}
+// Menú ejemplo http://codepen.io/Ju4ni/pen/PZBJNw
+.header{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f0f;
+  width: 100%;
+  // height: 50px;
+
+  &-nav-item{
+    height: 30px;
+    width: 15%;
+  }
+  a{
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  &-form-item{
+    width: 70%;
+  }
 }
 
 body div{
-  background-color: #f00;
+  background-color: lighten($bg-color, 0.95);
 }
 
 .container{
-  display: flex;
+  margin-bottom: 1em;
 
   .item{
-    background-color: $primary-color;
+    margin: $gap;
   }
 }

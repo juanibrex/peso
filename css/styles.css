@@ -1,17 +1,50 @@
+/*
+* Variables
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: gold;
+  background-color: #000;
+  color: #fff;
+  max-width: 400px;
 }
 
-body div {
-  background-color: #f00;
-}
-
-.container {
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #f0f;
+  width: 100%;
+}
+
+.header-nav-item {
+  height: 30px;
+  width: 15%;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-form-item {
+  width: 70%;
+}
+
+body div {
+  background-color: #020202;
+}
+
+.container {
+  margin-bottom: 1em;
 }
 
 .container .item {
-  background-color: #0ff;
+  margin: 0.5em;
 }

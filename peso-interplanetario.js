@@ -10,13 +10,18 @@ var boton = document.getElementById("js-boton");
 boton.addEventListener("click", pesaje);
 
 var sistemaSolar = [];
-sistemaSolar.push(new Planeta("Tierra", 9.8));
-sistemaSolar.push(new Planeta("Marte", 3.7));
-sistemaSolar.push(new Planeta("Jupiter", 11.7));
+sistemaSolar.push(new Planeta("Mercurio", 2.8));
+sistemaSolar.push(new Planeta("Venus", 8.9));
+sistemaSolar.push(new Planeta("Tierra", 9.81));
+sistemaSolar.push(new Planeta("Marte", 3.71));
+sistemaSolar.push(new Planeta("Jupiter", 22.9));
+sistemaSolar.push(new Planeta("Saturno", 9.1));
+sistemaSolar.push(new Planeta("Urano", 7.8));
+sistemaSolar.push(new Planeta("Neptuno", 11.0));
 
 var pesoUsuario,
     pesoFinal;
-var gTierra = 9.8;
+var gTierra = 9.81;
 var estado = 0;
 
 function pesaje(){
@@ -31,7 +36,7 @@ function pesaje(){
     if(pesoUsuario > 0){
       pesoFinal = pesoUsuario * w.gravedad / gTierra;
       console.log(pesoFinal + "kg en " + w.nombre);
-      resultado.innerHTML += "<p>" + pesoFinal + "kg en " + w.nombre + "</p>";
+      resultado.innerHTML += "<p>" + pesoFinal + "kg en " + w.nombre + "</p><hr />";
     }
   }
 
