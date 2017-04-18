@@ -35,8 +35,9 @@ function pesaje(){
   for(var w of sistemaSolar){
     if(pesoUsuario > 0){
       pesoFinal = pesoUsuario * w.gravedad / gTierra;
+      pesoFinal = Math.round(pesoFinal);
       console.log(pesoFinal + "kg en " + w.nombre);
-      resultado.innerHTML += "<p>" + pesoFinal + "kg en " + w.nombre + "</p><hr />";
+      resultado.innerHTML += '<div class="planetario__item"><span class="planetario__item--nombre">' + w.nombre + '</span><span class="planetario__item--peso">' + pesoFinal + ' Kg</span></div>';
     }
   }
 

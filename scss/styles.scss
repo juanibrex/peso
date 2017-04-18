@@ -12,44 +12,98 @@ $maxW: 400px;
 $gap: .5em;
 
 // Basic Reset
-*{margin: 0;padding: 0;box-sizing: border-box;}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 
 body{
   background-color: $bg-color;
   color: $primary-color;
   max-width: $maxW;
-  // margin: 0 auto;
+  margin: 0 auto; //Comentado para desarrollo
 }
-// Menú ejemplo http://codepen.io/Ju4ni/pen/PZBJNw
+
 .header{
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #f0f;
   width: 100%;
-  // height: 50px;
+  margin-bottom: $gap * 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  &-nav-item{
-    height: 30px;
-    width: 15%;
-  }
-  a{
-    color: $primary-color;
-    text-decoration: none;
+  &__form{
+    width: 90%;
   }
 
-  &-form-item{
-    width: 70%;
-  }
-}
-
-body div{
-  background-color: lighten($bg-color, 0.95);
-}
-
-.container{
-  margin-bottom: 1em;
-
-  .item{
+  &__item{
     margin: $gap;
+
+    // Menú ejemplo http://codepen.io/Ju4ni/pen/PZBJNw
+    &--menu{
+      color: $primary-color;
+      text-decoration: none;
+    }
+
+    &--form{
+      width: 100%;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+
+      &--input{
+        width: 100%;
+        border: none;
+        line-height: 2em;
+        color: lighten(#000, 1);
+        padding-left: .5em;
+      }
+
+      &--button{
+        background-color: transparent;
+        border: none;
+        line-height: 2em;
+        padding-right: .5em;
+        padding-left: .5em;
+        border-left: thin solid #ddd;
+      }
+    }
+  }
+}
+
+.main__copy{
+  text-align: center;
+  margin-bottom: $gap * 2;
+  padding-right: .5em;
+  padding-left: .5em;
+
+  &--title{
+    font-weight: 100;
+    margin-bottom: $gap;
+  }
+  &--description{
+    font-size: .9em;
+    line-height: 1.25em;
+  }
+}
+
+.planetario{
+  width: 75%;
+  font-family: Helvetica, sans-serif;
+  margin: auto;
+
+  &__item{
+  border-bottom: 1px solid #ccc;
+  line-height: 2.5em;
+  display: flex;
+  justify-content: space-between;
+
+    &--nombre{
+      text-transform: uppercase;
+    }
   }
 }

@@ -6,20 +6,24 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="container header">
-      <div class="item header-nav-item">
-        <a id="nav-toggle" href="#">&#9776;</a>
+  <header class="header">
+      <div class="header__item header__menu">
+        <a  class="header__item--menu" id="nav-toggle" href="#">&#9776;</a>
       </div>
-      <div class="item header-form-item">
-        <form>
-          <input type="number" id="js-usuario">
-          <input type="button" value="Enviar" id="js-boton">
+      <div class="header__item header__form">
+        <form class="header__item--form">
+          <input type="number" id="js-usuario" class="header__item--form--input">
+          <input type="button" value="Enviar" id="js-boton" class="header__item--form--button">
         </form>
       </div>
   </header>
-  <h1>Tu peso en otros planetas</h1>
-  <p>¿Descubre cuál es tu peso en otros planetas del sistema solar?</p>
-  <div id="js-resultado"></div>
+  <main class="cuerpo">
+    <div class="main__copy">
+      <h1 class="main__copy--title">Tu peso en otros planetas</h1>
+      <p class="main__copy--description">Ingresa tu peso actual y descubre cuanto pesarías si estuvieras en otros planetas del sistema solar.</p>
+    </div>
+    <div id="js-resultado" class="planetario"></div>
+  </main>
   <script src="peso-interplanetario.js"></script>
 </body>
 </html>
