@@ -54,6 +54,9 @@ body{
       height: auto;
       display: flex;
       justify-content: space-between;
+      border-radius: 2px;
+      padding-right: 2px;
+      padding-left: 2px;
 
       &--input{
         width: 100%;
@@ -61,6 +64,10 @@ body{
         line-height: 2em;
         color: lighten(#000, 1);
         padding-left: .5em;
+
+        &:focus{
+          outline: none;
+        }
       }
 
       &--button{
@@ -70,6 +77,10 @@ body{
         padding-right: .5em;
         padding-left: .5em;
         border-left: thin solid #ddd;
+
+        &:focus{
+          outline: none;
+        }
       }
     }
   }

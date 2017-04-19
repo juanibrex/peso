@@ -55,6 +55,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-radius: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
 .header__item--form--input {
@@ -65,6 +68,10 @@ body {
   padding-left: .5em;
 }
 
+.header__item--form--input:focus {
+  outline: none;
+}
+
 .header__item--form--button {
   background-color: transparent;
   border: none;
@@ -72,6 +79,10 @@ body {
   padding-right: .5em;
   padding-left: .5em;
   border-left: thin solid #ddd;
+}
+
+.header__item--form--button:focus {
+  outline: none;
 }
 
 .main__copy {
