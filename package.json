@@ -1,13 +1,13 @@
 {
-  "name": "peso-planetas",
+  "name": "peso-interplanetario",
   "version": "1.0.0",
-  "description": "",
+  "description": "Calculadora de peso entre los planetas del sistema solar",
   "main": "peso-interplanetario.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juani Brex  <onofgo@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.8",
