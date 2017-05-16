@@ -97,7 +97,7 @@ body{
     border-radius: 2px;
     padding-right: 2px;
     padding-left: 2px;
-    margin: $gap;
+    margin: 1em $gap;
     @include desde($medium){
       background-color:  lighten(#000, 8);
       border-radius: 4px;
@@ -106,7 +106,7 @@ body{
     &--input{
       width: 100%;
       border: none;
-      line-height: 2;
+      line-height: 2.5;
       color: lighten(#000, 1);
       padding-left: .5em;
       background-color: transparent;
@@ -124,7 +124,7 @@ body{
     &--button{
       background-color: transparent;
       border: none;
-      line-height: 2;
+      line-height: 2.5;
       padding-right: .5em;
       padding-left: .5em;
       border-left: thin solid #ddd;

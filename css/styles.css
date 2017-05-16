@@ -78,7 +78,7 @@ body {
   border-radius: 2px;
   padding-right: 2px;
   padding-left: 2px;
-  margin: 0.5em;
+  margin: 1em 0.5em;
 }
 
 @media screen and (min-width: 640px) {
@@ -91,7 +91,7 @@ body {
 .main-form--input {
   width: 100%;
   border: none;
-  line-height: 2;
+  line-height: 2.5;
   color: #030303;
   padding-left: .5em;
   background-color: transparent;
@@ -112,7 +112,7 @@ body {
 .main-form--button {
   background-color: transparent;
   border: none;
-  line-height: 2;
+  line-height: 2.5;
   padding-right: .5em;
   padding-left: .5em;
   border-left: thin solid #ddd;
