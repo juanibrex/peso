@@ -4,7 +4,7 @@
 
 // Colors Palette
 $primary-color: #fff;
-$secondary-color: cadetblue;
+$secondary-color: cyan;
 $bg-color: #000;
 
 // Gutter
@@ -275,6 +275,9 @@ body{
   padding-left: .5em;
   font-weight: 100;
   color: $secondary-color;
+    &:nth-child(even){
+      color: lime;
+    }
 
     &--name{
       text-transform: uppercase;

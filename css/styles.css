@@ -281,7 +281,11 @@ body {
   padding-right: .5em;
   padding-left: .5em;
   font-weight: 100;
-  color: cadetblue;
+  color: cyan;
+}
+
+.main-content__item:nth-child(even) {
+  color: lime;
 }
 
 .main-content__item--name {
