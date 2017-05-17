@@ -84,14 +84,65 @@ body{
   &-menu{
     background-color: #fff;
     color: #000;
-    width: 50%;
-    margin-left: -100%;
+    width: 70%;
     height: 100vh;
-    transition: all .9s ease;
-    position: fixed;
+    transition: all 1s ease;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    z-index: 10;
+    @include desde($medium){
+      width: 50%;
+    }
+    @include desde($large){
+      width: 30%;
+    }
 
     &.active{
-      margin-left: 0;
+      left: 0;
+    }
+
+    &--disclaimer{
+      margin-top: 5em;
+      margin-right: $gap;
+      margin-left: $gap;
+      width: 90%;
+    }
+    &--title{
+      text-transform: uppercase;
+      font-size: .9em;
+      font-weight: 100;
+      padding-bottom: 1em;
+    }
+    &--content{
+      font-size: .9em;
+      line-height: 1.2;
+      padding-bottom: 1em;
+    }
+    &--footer{
+      margin-top: 2em;
+    }
+    code{
+      display: block;
+      margin-bottom: 1em;
+    }
+    &--source{
+      padding-top: 2.5em;
+    }
+    &--sign{
+      padding-left: 2.5em;
+      line-height: 2;
+      height: 2em;
+      position: relative;
+      &::before{
+        content: "❤";
+        position: absolute;
+        top: 0;
+        left: 7px;
+        color: red;
+        font-size: 2em;
+        line-height: .5;
+      }
     }
   }
 
@@ -159,6 +210,19 @@ body{
     font-weight: 100;
     cursor: pointer;
     position: relative;
+    z-index: 20;
+
+    &.inactive{
+      color: #000;
+    // position: relative;
+    //   &::before{
+    //     content: "x";
+    //     top: 0;
+    //     left: 0;
+    //     color: #000;
+    //     position: absolute;
+    //   }
+    }
 }
 
 // BANNER
