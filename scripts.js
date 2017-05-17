@@ -48,3 +48,14 @@ function limpia(){
     resultado.removeChild(resultado.firstChild);
   }
 }
+
+// Menu
+var toggleMenu = document.getElementById("js-toggle-menu");
+var menu = document.getElementById("js-main-menu");
+
+toggleMenu.addEventListener("click", function(){
+  // menu.classList.add("mostrar");
+  // menu.classList.remove("mostrar");
+  toggleMenu.classList.toggle("inactive");
+  menu.classList.toggle("active");
+})

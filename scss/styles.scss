@@ -82,11 +82,17 @@ body{
   }
 
   &-menu{
-    // Menú ejemplo http://codepen.io/Ju4ni/pen/PZBJNw
-    color: $primary-color;
-    text-decoration: none;
-    font-size: 2em;
-    font-weight: 100;
+    background-color: #fff;
+    color: #000;
+    width: 50%;
+    margin-left: -100%;
+    height: 100vh;
+    transition: all .9s ease;
+    position: fixed;
+
+    &.active{
+      margin-left: 0;
+    }
   }
 
   // Form
@@ -145,6 +151,15 @@ body{
   }
 }
 
+// Hamburguesa
+.toggle-menu{
+    // Menú ejemplo http://codepen.io/Ju4ni/pen/PZBJNw
+    color: $primary-color;
+    font-size: 2em;
+    font-weight: 100;
+    cursor: pointer;
+    position: relative;
+}
 
 // BANNER
 .banner{
