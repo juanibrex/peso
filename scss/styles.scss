@@ -107,6 +107,7 @@ body{
       margin-right: $gap;
       margin-left: $gap;
       width: 90%;
+      overflow: auto;
     }
     &--title{
       text-transform: uppercase;
