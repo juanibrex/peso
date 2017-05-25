@@ -349,12 +349,12 @@ $pluton-color: #805F47;
     }
   }
 }
-
+// Animation
 .main-content__item:nth-child(even) .main-content__item--name::before{
-  animation: floating 6s infinite ease-in-out;
+  animation: floating 4s infinite ease-in-out;
 }
 .main-content__item:nth-child(odd) .main-content__item--name::before{
-  animation: floating 4s infinite ease-in-out;
+  animation: floating 6s infinite ease-in-out;
 }
 @keyframes floating {
   0% { transform: translate(0,-2px) }
@@ -362,10 +362,28 @@ $pluton-color: #805F47;
   100% { transform: translate(0,-2px) }
 }
 
+// Mixin
+@mixin circunferencia($ratio: 1){
+  width: $base-size * $ratio;
+  height: $base-size * $ratio;
+}
 .Mercurio{
   &::before{
     background-color: $mercurio-color;
-        box-shadow: inset -3px -3px darken($mercurio-color, 25);
+    box-shadow: inset -3px -3px darken($mercurio-color, 10);
+    @include circunferencia(.8);
+    background:
+    radial-gradient(
+      8px circle at 60% 20%,
+      darken($mercurio-color, 11%) 50%,
+      transparent 50%
+    ),
+    radial-gradient(
+      12px circle at 30% 70%,
+      darken($mercurio-color, 8%) 50%,
+      transparent 50%
+    ),
+    $mercurio-color;
   // box-shadow: inset -3px -3px darken(#76777A, 5);
   // background-color: #76777A;
   // background-image: radial-gradient(
@@ -383,42 +401,91 @@ $pluton-color: #805F47;
 .Venus{
   &::before{
     background-color: $venus-color;
-    box-shadow: inset -3px -3px darken($venus-color, 25);
+    @include circunferencia(.9);
+    background:
+    linear-gradient(
+      25deg,
+      $venus-color - 20 10%,
+      $venus-color + 15 30%,
+      $venus-color 45%,
+      $venus-color - 25 70%,
+      $venus-color + 10 90%
+    );
   }
 }
 .Marte{
   &::before{
     background-color: $marte-color;
-    box-shadow: inset -3px -3px darken($marte-color, 25);
+    box-shadow: inset -3px -3px darken($marte-color, 10);
+    @include circunferencia(.8);
+    background:
+      radial-gradient(
+        12px circle at 15% 30%,
+        darken($marte-color, 11) 50%,
+        transparent 50%
+      ),
+      radial-gradient(
+        16px circle at 60% 70%,
+        darken($marte-color, 8) 50%,
+        transparent 50%
+    )
+      $marte-color;
   }
 }
 .Jupiter{
   &::before{
     background-color: $jupiter-color;
-    box-shadow: inset -3px -3px darken($jupiter-color, 25);
+    @include circunferencia();
+    background:
+    linear-gradient(
+      $jupiter-color 6%,
+      $jupiter-color + 50 12.5%,
+      $jupiter-color - 20 37.5%,
+      $jupiter-color + 50 62.5%,
+      $jupiter-color - 20 69%,
+      $jupiter-color + 50 87.5%,
+      $jupiter-color 95%
+    );
   }
 }
 .Saturno{
+  position: relative;
   &::before{
     background-color: $saturno-color;
     box-shadow: inset -3px -3px darken($saturno-color, 25);
+    @include circunferencia(.95);
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    left: 15%;
+    top: 35%;
+    box-shadow: -12px 5px 1px 3px darken($saturno-color, 12);
+    @include circunferencia(.5);
+    border-radius: 100%;
+    transform:
+      rotate(-30deg)
+      skew(65deg);
   }
 }
 .Urano{
   &::before{
     background-color: $urano-color;
     box-shadow: inset -3px -3px darken($urano-color, 25);
+    @include circunferencia(.95);
   }
 }
 .Neptuno{
   &::before{
     background-color: $neptuno-color;
     box-shadow: inset -3px -3px darken($neptuno-color, 25);
+    @include circunferencia(.9);
   }
 }
 .Pluton{
   &::before{
     background-color: $pluton-color;
     box-shadow: inset -3px -3px darken($pluton-color, 25);
+    @include circunferencia(.7);
   }
 }
