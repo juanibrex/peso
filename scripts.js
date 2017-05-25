@@ -36,7 +36,7 @@ function pesaje(){
       pesoFinal = pesoUsuario * w.gravedad / gTierra;
       pesoFinal = Math.round(pesoFinal);
       console.log(pesoFinal + "kg en " + w.nombre);
-      resultado.innerHTML += '<div class="main-content__item"></span><span class="main-content__item--name ' + w.nombre + '">' + w.nombre + '</span><span class="main-content__item--weight">' + pesoFinal + ' Kg</span></div>';
+      resultado.innerHTML += '<div class="main-content__item"></span><span class="main-content__item--name ' + w.nombre + '">' + w.nombre + '</span><span class="main-content__item--weight">' + pesoFinal + '</span></div>';
     }
   }
 

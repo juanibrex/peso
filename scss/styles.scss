@@ -340,8 +340,12 @@ $pluton-color: #805F47;
     }
 
     &--weight{
-      font-size: 1.2em;
+      font-size: 1.4em;
       margin-right: 1em;
+      &::after{
+        content: " Kg";
+        font-size: .8em;
+      }
     }
   }
 }
