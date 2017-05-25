@@ -43,7 +43,7 @@ html{
 }
 
 body{
-  color: $primary-color;
+  color: #363640; //$primary-color;
   max-width: $maxW;
   // From http://lea.verou.me/css3patterns/#starry-night
   background-color: $bg-color;
@@ -258,7 +258,28 @@ body{
   }
 }
 
+// Variables
+$bgcolor: #363640;
+$base-size: 50px;
+$mercurio-color:#76777A;
+$venus-color: #D1734B;
+$marte-color: #C25447;
+$jupiter-color: #E89150;
+$saturno-color: #D1AA5E;
+$urano-color: #9DB1BF;
+$neptuno-color: #5870A8;
+$pluton-color: #805F47;
+
 // Content
+// HTML generado por js
+/*
+<div id="js-resultado" class="main-content">
+  <div class="main-content__item">
+    <span class="main-content__item--name">' + w.nombre + '</span>
+    <span class="main-content__item--weight">' + pesoFinal + ' Kg</span>
+  </div>
+</div>
+*/
 .main-content{
   width:100%;
   margin: auto;
@@ -267,25 +288,141 @@ body{
 
   &__item{
   background-color: lighten(#000, 6);
-  line-height: 3em;
+  line-height: 6em;
   border-radius: 2px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: .5em;
   padding-right: .5em;
   padding-left: .5em;
   font-weight: 100;
-  color: $secondary-color;
-    &:nth-child(even){
-      color: lime;
-    }
+  color: $primary-color;
+    // &:nth-child(even){
+    //   color: lime;
+    // }
+
+    /*
+    * Dibujo de planetas
+    */
+// @mixin planeta(){
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 100%;
+// }
+//     &--draw{
+//       &-Mercurio{
+//         $color-mercurio: #76777A;
+//         @include planeta();
+//         background-color: $color-mercurio;
+//         box-shadow: inset -3px -3px $color-mercurio - 15;
+//       }
+//     }
 
     &--name{
       text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      // position: relative;
+      // padding-left: 6em;
+      &::before{
+        content: "";
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        display: inline-block;
+        width: $base-size;
+        height: $base-size;
+        border-radius: 100%;
+        margin-right: 2em;
+        margin-left: 1em;
+      }
     }
 
     &--weight{
       font-size: 1.2em;
+      margin-right: 1em;
     }
   }
 }
+
+.main-content__item:nth-child(even) .main-content__item--name::before{
+  animation: floating 6s infinite ease-in-out;
+}
+.main-content__item:nth-child(odd) .main-content__item--name::before{
+  animation: floating 4s infinite ease-in-out;
+}
+@keyframes floating {
+  0% { transform: translate(0,-2px) }
+  60% { transform: translate(0,4px) }
+  100% { transform: translate(0,-2px) }
+}
+
+.Mercurio{
+  &::before{
+    background-color: $mercurio-color;
+        box-shadow: inset -3px -3px darken($mercurio-color, 25);
+  // box-shadow: inset -3px -3px darken(#76777A, 5);
+  // background-color: #76777A;
+  // background-image: radial-gradient(
+  //                   darken(#76777A, 15) 20%,
+  //                   transparent 20%
+  //                   ),
+  //                   radial-gradient(
+  //                   darken(#76777A, 25) 10%,
+  //                   transparent 10%
+  //                   );
+  // // background-size: 10px;
+  // background-position: -7px 7px, 15px 5px;
+  }
+}
+.Venus{
+  &::before{
+    background-color: $venus-color;
+    box-shadow: inset -3px -3px darken($venus-color, 25);
+  }
+}
+.Marte{
+  &::before{
+    background-color: $marte-color;
+    box-shadow: inset -3px -3px darken($marte-color, 25);
+  }
+}
+.Jupiter{
+  &::before{
+    background-color: $jupiter-color;
+    box-shadow: inset -3px -3px darken($jupiter-color, 25);
+  }
+}
+.Saturno{
+  &::before{
+    background-color: $saturno-color;
+    box-shadow: inset -3px -3px darken($saturno-color, 25);
+  }
+}
+.Urano{
+  &::before{
+    background-color: $urano-color;
+    box-shadow: inset -3px -3px darken($urano-color, 25);
+  }
+}
+.Neptuno{
+  &::before{
+    background-color: $neptuno-color;
+    box-shadow: inset -3px -3px darken($neptuno-color, 25);
+  }
+}
+.Pluton{
+  &::before{
+    background-color: $pluton-color;
+    box-shadow: inset -3px -3px darken($pluton-color, 25);
+  }
+}
+
+// background-image:
+//     radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+//     radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+//     radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+//     radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+//   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+//   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;

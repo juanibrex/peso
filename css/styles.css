@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  color: #fff;
+  color: #363640;
   max-width: 960px;
   background-color: #000;
   background-image: -webkit-radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), -webkit-radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px), -webkit-radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px), -webkit-radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
@@ -261,6 +261,14 @@ body {
   }
 }
 
+/*
+<div id="js-resultado" class="main-content">
+  <div class="main-content__item">
+    <span class="main-content__item--name">' + w.nombre + '</span>
+    <span class="main-content__item--weight">' + pesoFinal + ' Kg</span>
+  </div>
+</div>
+*/
 .main-content {
   width: 100%;
   margin: auto;
@@ -270,7 +278,7 @@ body {
 
 .main-content__item {
   background-color: #0f0f0f;
-  line-height: 3em;
+  line-height: 6em;
   border-radius: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,21 +286,120 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: .5em;
   padding-right: .5em;
   padding-left: .5em;
   font-weight: 100;
-  color: cyan;
-}
-
-.main-content__item:nth-child(even) {
-  color: lime;
+  color: #fff;
+  /*
+    * Dibujo de planetas
+    */
 }
 
 .main-content__item--name {
   text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-content__item--name::before {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 2em;
+  margin-left: 1em;
 }
 
 .main-content__item--weight {
   font-size: 1.2em;
+  margin-right: 1em;
+}
+
+.main-content__item:nth-child(even) .main-content__item--name::before {
+  -webkit-animation: floating 6s infinite ease-in-out;
+          animation: floating 6s infinite ease-in-out;
+}
+
+.main-content__item:nth-child(odd) .main-content__item--name::before {
+  -webkit-animation: floating 4s infinite ease-in-out;
+          animation: floating 4s infinite ease-in-out;
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+  }
+  60% {
+    -webkit-transform: translate(0, 4px);
+            transform: translate(0, 4px);
+  }
+  100% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+  }
+}
+
+@keyframes floating {
+  0% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+  }
+  60% {
+    -webkit-transform: translate(0, 4px);
+            transform: translate(0, 4px);
+  }
+  100% {
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+  }
+}
+
+.Mercurio::before {
+  background-color: #76777A;
+  box-shadow: inset -3px -3px #373839;
+}
+
+.Venus::before {
+  background-color: #D1734B;
+  box-shadow: inset -3px -3px #7d3c20;
+}
+
+.Marte::before {
+  background-color: #C25447;
+  box-shadow: inset -3px -3px #672a22;
+}
+
+.Jupiter::before {
+  background-color: #E89150;
+  box-shadow: inset -3px -3px #a35215;
+}
+
+.Saturno::before {
+  background-color: #D1AA5E;
+  box-shadow: inset -3px -3px #896727;
+}
+
+.Urano::before {
+  background-color: #9DB1BF;
+  box-shadow: inset -3px -3px #577285;
+}
+
+.Neptuno::before {
+  background-color: #5870A8;
+  box-shadow: inset -3px -3px #2c3854;
+}
+
+.Pluton::before {
+  background-color: #805F47;
+  box-shadow: inset -3px -3px #2e221a;
 }
