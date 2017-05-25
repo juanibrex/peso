@@ -8,11 +8,13 @@ var gulp = require("gulp"),
 
 /*
 * Compila los archivos sass y agrega los prefijos propietarios
+* Output Style: :nested, :compact, :expanded, :compressed
 */
 gulp.task("sass", function(){
   gulp.src("./scss/**/*.scss")
     .pipe(sass({
-      outputStyle: 'expanded'
+      outputStyle: "compressed",
+      sourceComments: false
     }).on("error", sass.logError))
     .pipe(autoprefixer({
       versions: ['last 2 browsers']
